@@ -22,7 +22,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+
 public class ManagerService {
 
     private final ManagerRepository managerRepository;
