@@ -1,0 +1,12 @@
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+  file:
+    name: application.log
+    path: logs/ # 로그가 저장될 경로
+jwt:
+  secret:
+    key: c2VjcmV0LXN1cGVyLXNlY3JldC1zaWduaW5nLWtleS1leGFtcGxlMTIzIQ==
