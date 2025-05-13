@@ -70,3 +70,10 @@ public class JwtUtil {
                 .getBody();
     }
 }
+
+
+// jwtUtil 은 JWT를 생성하고 파싱하고, 검증하는 것
+// createToken() 로그인 성공 시 JWT 문자열 생성
+// substringToken() Bearer 접두어 제거, Bearer은 JWT를 사용할때
+// HTTP 요청 헤더에 토큰기반임을 명시하는 키워드
+// extractClaims() JWT를 파싱해서 안의 정보(Claim) 추출

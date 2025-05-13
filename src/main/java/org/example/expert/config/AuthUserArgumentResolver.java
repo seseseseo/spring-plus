@@ -14,6 +14,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 public class AuthUserArgumentResolver implements HandlerMethodArgumentResolver {
 
+    // @Auth 어노테이션과 AuthUser 타입 여부 확인
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         boolean hasAuthAnnotation = parameter.getParameterAnnotation(Auth.class) != null;
@@ -24,9 +25,10 @@ public class AuthUserArgumentResolver implements HandlerMethodArgumentResolver {
             throw new AuthException("@Auth와 AuthUser 타입은 함께 사용되어야 합니다.");
         }
 
-        return hasAuthAnnotation;
+        return hasAuthAnnotation;// 둘다 있는 경우에만 true
     }
 
+    // 요청에 담긴 유저 정보를 AuthUser 객체로 변환하여 컨트롤러에 전달
     @Override
     public Object resolveArgument(
             @Nullable MethodParameter parameter,
